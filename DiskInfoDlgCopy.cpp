@@ -639,6 +639,7 @@ void CDiskInfoDlg::SaveText(CString fileName)
 		CString vendorSpecific;
 		vendorSpecific = i18n(_T("Smart"), _T("VENDOR_SPECIFIC"), m_bSmartEnglish);
 
+		m_Ata.vars[i].AttributeCount = 0;
 		if(m_Ata.vars[i].AttributeCount > 0)
 		{
 			cstr.Format(_T("-- S.M.A.R.T. --------------------------------------------------------------\r\n"));
@@ -792,6 +793,7 @@ void CDiskInfoDlg::SaveText(CString fileName)
 		}
 
 		WORD data[256];
+		m_bDumpIdentifyDevice = FALSE;
 		if(m_bDumpIdentifyDevice)
 		{
 			memcpy(data, &(m_Ata.vars[i].IdentifyDevice), 512);
@@ -864,6 +866,7 @@ void CDiskInfoDlg::SaveText(CString fileName)
 			clip += _T("\r\n");
 		}
 
+		m_bDumpSmartReadData = FALSE;
 		if(m_bDumpSmartReadData)
 		{
 			memcpy(data, &(m_Ata.vars[i].SmartReadData), 512);
@@ -913,6 +916,7 @@ void CDiskInfoDlg::SaveText(CString fileName)
 			clip += _T("\r\n");
 		}
 
+		m_bDumpSmartReadThreshold = FALSE;
 		if(m_bDumpSmartReadThreshold && (m_Ata.vars[i].DiskVendorId != m_Ata.SSD_VENDOR_NVME))
 		{
 			memcpy(data, &(m_Ata.vars[i].SmartReadThreshold), 512);
