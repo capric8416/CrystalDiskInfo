@@ -382,7 +382,7 @@ void CDiskInfoDlg::InitAta(BOOL useWmi, BOOL advancedDiskSearch, PBOOL flagChang
 	m_NowDetectingUnitPowerOnHours = FALSE;
 
 	m_Ata.Init(useWmi, advancedDiskSearch, flagChangeDisk, workaroundHD204UI, workaroundAdataSsd, m_bHideNoSmartDisk, m_bSortDriveLetter);
-	
+#if 0
 	DWORD errorCount = 0;
 	for(int i = 0; i < m_Ata.vars.GetCount(); i++)
 	{
@@ -425,7 +425,7 @@ void CDiskInfoDlg::InitAta(BOOL useWmi, BOOL advancedDiskSearch, PBOOL flagChang
 		DebugPrint(_T("SaveSmartInfo(i)"));
 		SaveSmartInfo(i);
 	}
-
+#endif
 	if (!once)
 	{
 		DebugPrint(_T("CheckResident()"));
@@ -433,6 +433,7 @@ void CDiskInfoDlg::InitAta(BOOL useWmi, BOOL advancedDiskSearch, PBOOL flagChang
 		once = TRUE;
 	}
 
+#if 0
 	AlertSound(0, AS_PLAY_SOUND);
 	if(errorCount)
 	{
@@ -441,7 +442,7 @@ void CDiskInfoDlg::InitAta(BOOL useWmi, BOOL advancedDiskSearch, PBOOL flagChang
 		m_NowDetectingUnitPowerOnHours = TRUE;
 	}
 	SetWindowTitle(_T(""));
-
+#endif
 	DebugPrint(_T("AutoAamApmAdaption()"));
 	AutoAamApmAdaption();
 
