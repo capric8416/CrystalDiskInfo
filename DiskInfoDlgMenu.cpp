@@ -128,6 +128,7 @@ void CDiskInfoDlg::ShowGraphDlg(int index)
 
 void CDiskInfoDlg::CreateExchangeInfo()
 {
+	return;
 	CString cstr;
 	cstr.Format(_T("%d"), (DWORD)m_Ata.vars.GetCount());
 	WritePrivateProfileStringFx(_T("EXCHANGE"), _T("DetectedDisk"), cstr, m_SmartDir + EXCHANGE_INI);
