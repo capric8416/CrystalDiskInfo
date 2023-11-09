@@ -932,6 +932,8 @@ void CGraphDlg::InitMenuBar()
 
 BOOL CGraphDlg::UpdateGraph()
 {
+	return FALSE;
+
 	CString cstr, line, values, thresholds, maxMin, points;
 	CString smartFile, fileName;
 	CStdioFile inFile;
@@ -993,6 +995,7 @@ BOOL CGraphDlg::UpdateGraph()
 
 	arg = _T("[");
 
+	
 	for(int i = 0; i < m_DetectedDisk; i++)
 	{
 		if(m_bGraph[i] == FALSE)
