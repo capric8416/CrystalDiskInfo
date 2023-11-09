@@ -2061,6 +2061,7 @@ void CDiskInfoDlg::AlarmOverheat()
 
 void CDiskInfoDlg::OnTimer(UINT_PTR nIDEvent)
 {
+	return;
 	if(nIDEvent == TIMER_SET_POWER_ON_UNIT)
 	{
 		KillTimer(TIMER_SET_POWER_ON_UNIT);
