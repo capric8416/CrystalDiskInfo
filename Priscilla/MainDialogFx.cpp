@@ -8,6 +8,7 @@
 #include "../stdafx.h"
 #include "MainDialogFx.h"
 #include <ctime>
+#include <cstdlib>
 
 CMainDialogFx::CMainDialogFx(UINT dlgResouce, CWnd* pParent)
 		:CDialogFx(dlgResouce, pParent)
