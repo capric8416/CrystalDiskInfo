@@ -10614,6 +10614,7 @@ BOOL CAtaSmart::GetSmartInfoJMB39X(INT index, BYTE port, ATA_SMART_INFO* asi)
 
 BOOL CAtaSmart::FillSmartData(ATA_SMART_INFO* asi)
 {
+	return FALSE;
 	CString str;
 	asi->AttributeCount = 0;
 	int j = 0;
