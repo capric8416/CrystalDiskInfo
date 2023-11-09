@@ -2492,6 +2492,8 @@ void CDiskInfoDlg::CheckPage()
 
 void CDiskInfoDlg::SaveSmartInfo(DWORD i)
 {
+	return;
+
 	if (!m_Ata.vars[i].IsSmartCorrect)
 	{
 		return;
@@ -2637,6 +2639,7 @@ void CDiskInfoDlg::SaveSmartInfo(DWORD i)
 
 BOOL CDiskInfoDlg::AppendLog(CString dir, CString disk, CString file, CTime time, int value, BOOL flagFirst, int threshold)
 {
+	return FALSE;
 	TCHAR str[256];
 
 	// First Time
